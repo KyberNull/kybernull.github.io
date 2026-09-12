@@ -21,3 +21,14 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Devenv internal cache and environment files
+.devenv/
+
+# Local developer overrides (never commit these)
+devenv.local.nix
+devenv.local.yaml
+
+# Direnv integration directory (if using shell integration)
+.direnv/
+
