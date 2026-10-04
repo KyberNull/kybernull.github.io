@@ -11,10 +11,7 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
-			adapter: adapter({
-				pages: 'docs',
-				assets: 'docs'
-			}),
+			adapter: adapter(),
 			preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
 			extensions: ['.svelte', '.svx', '.md']
 		})
