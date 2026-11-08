@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-	import ThemeToggle from '$lib/ThemeToggle.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import { themeStore } from '$lib/stores/theme.svelte';
 	import '../app.css';
 	import { onMount } from 'svelte';
