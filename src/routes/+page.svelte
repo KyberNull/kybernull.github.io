@@ -19,7 +19,7 @@
 			<Stamp
 				src="/images/bokeh.jpg"
 				alt="Abstract orange and green bokeh"
-				caption="A LITTLE CURIOSITY"
+				caption="BEAUTIFUL WORLD OUT THERE"
 			/>
 			<div class="intro-verse">
 				<p lang="sa">
