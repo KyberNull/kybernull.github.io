@@ -1,10 +1,33 @@
+
 <script lang="ts">
     import { themeStore } from '$lib/stores/theme.svelte';
+
+    function switchTheme(event: MouseEvent) {
+        const nextTheme = themeStore.isDark ? 'light' : 'dark';
+
+        const button = event.currentTarget as HTMLElement;
+        const rect = button.getBoundingClientRect();
+
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+
+        document.documentElement.style.setProperty('--theme-x', `${x}px`);
+        document.documentElement.style.setProperty('--theme-y', `${y}px`);
+
+        if (!document.startViewTransition) {
+            themeStore.toggle();
+            return;
+        }
+
+        document.startViewTransition(() => {
+            themeStore.toggle();
+        });
+    }
 </script>
 
 <button
     class="theme-toggle"
-    onclick={themeStore.toggle}
+    onclick={switchTheme}
     aria-label={`Switch to ${themeStore.isDark ? 'light' : 'dark'} mode`}
     aria-pressed={themeStore.isDark}
 >
@@ -20,6 +43,7 @@
         position: fixed;
         right: 24px;
         bottom: 24px;
+        z-index: 10;
 
         display: grid;
         place-items: center;
