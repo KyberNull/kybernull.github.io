@@ -1,0 +1,138 @@
+:root,
+[data-theme='light'] {
+	color-scheme: light;
+	--bg: #f3f1eb;
+	--fg: #141413;
+	--accent: #e8c4b5;
+}
+
+[data-theme='dark'] {
+	color-scheme: dark;
+	--bg: #191d22;
+	--fg: #c5ced8;
+	--accent: #7189a3;
+}
+
+/* Typography variables */
+:root {
+	--font-sans: 'IBM Plex Sans', sans-serif;
+	--font-serif: 'Source Serif 4', serif;
+	--font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--fg);
+	font-family: var(--font-sans);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.65;
+}
+
+.mono {
+	font-family: var(--font-mono);
+}
+
+.serif {
+	font-family: var(--font-serif);
+}
+
+/* Headings */
+h1,
+h2 {
+	font-family: var(--font-serif);
+	font-weight: 500;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-sans);
+	font-weight: 500;
+}
+
+.metadata {
+	font-family: var(--font-mono);
+}
+
+.editorial {
+	font-family: var(--font-serif);
+}
+
+/* Text selection */
+::selection {
+	background: var(--accent);
+	color: var(--bg);
+}
+
+/* Hyperlinks */
+a {
+	color: var(--accent);
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 3px;
+	transition: text-decoration-color 150ms ease;
+}
+
+a:hover {
+	text-decoration-color: currentColor;
+}
+
+/* Circular theme reveal */
+::view-transition-old(root) {
+	animation: none;
+	z-index: 1;
+}
+
+::view-transition-new(root) {
+	animation: theme-reveal 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	z-index: 2;
+}
+
+@keyframes theme-reveal {
+	from {
+		clip-path: circle(0 at var(--theme-x, 50%) var(--theme-y, 50%));
+	}
+
+	to {
+		clip-path: circle(150vmax at var(--theme-x, 50%) var(--theme-y, 50%));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none;
+	}
+}
+
+@media (max-width: 700px) {
+	.intro-layout {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+		gap: 2.5rem;
+	}
+
+	.intro-body {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.intro-stamp {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.75rem;
+		padding: 0;
+	}
+
+	.intro-verse {
+		width: min(100%, 280px);
+		margin: 0 auto;
+		text-align: center;
+	}
+}
