@@ -4,8 +4,6 @@
 
 <header class="site-header">
 	<nav class="navbar" aria-label="Main navigation">
-		<a href="/" class="wordmark">aasish.</a>
-
 		<div class="nav-links">
 			<a href="/" class="nav-link">Home</a>
 			<a href="/projects" class="nav-link">Projects</a>
@@ -28,17 +26,7 @@
 
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 2rem;
-	}
-
-	.wordmark {
-		font-family: var(--font-serif);
-		font-size: 1.25rem;
-		font-weight: 600;
-		color: var(--fg);
-		text-decoration: none;
-		letter-spacing: -0.04em;
+		justify-content: flex-end;
 	}
 
 	.nav-links {
