@@ -2,11 +2,11 @@
 	let {
 		github = '',
 		linkedin = '',
-		email = ''
+		twitter = ''
 	}: {
 		github?: string;
 		linkedin?: string;
-		email?: string;
+		twitter?: string;
 	} = $props();
 </script>
 
@@ -15,25 +15,25 @@
 		<div class="social-links">
 			{#if github}
 				<a href={github} target="_blank" rel="noopener noreferrer">
-					GitHub <span>↗</span>
+					github <span>↗</span>
 				</a>
 			{/if}
 
 			{#if linkedin}
 				<a href={linkedin} target="_blank" rel="noopener noreferrer">
-					LinkedIn <span>↗</span>
+					linkedin <span>↗</span>
 				</a>
 			{/if}
 
-			{#if email}
-				<a href={`mailto:${email}`}>
-					Email <span>↗</span>
+			{#if twitter}
+				<a href={twitter}>
+					twitter <span>↗</span>
 				</a>
 			{/if}
 		</div>
 
 		<span class="copyright">
-			© {new Date().getFullYear()} Aasish
+			{new Date().getFullYear()} Aasish
 		</span>
 	</div>
 </footer>
