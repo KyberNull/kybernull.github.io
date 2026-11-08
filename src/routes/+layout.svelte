@@ -1,6 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import { themeStore } from '$lib/stores/theme.svelte';
 	import '../app.css';
 	import { onMount } from 'svelte';
@@ -16,6 +17,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<Navbar />
+
 {@render children()}
 
-<ThemeToggle />
+<Footer github="" linkedin="" email="" />
