@@ -21,8 +21,8 @@
 }
 
 body {
-    background-color: var(--bg);
-    color: var(--fg);
+	background-color: var(--bg);
+	color: var(--fg);
 	font-family: var(--font-sans);
 	font-size: 16px;
 	font-weight: 400;
