@@ -17,13 +17,29 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Navbar />
+<div class="app-shell">
+	<Navbar />
 
-{@render children()}
+	<div class="page-content">
+		{@render children()}
+	</div>
 
-<Footer
-	github="https://github.com/KyberNull"
-	linkedin="https://www.linkedin.com/in/aasish-srivatsa-yenni-2531a7175/"
-	twitter="https://x.com/KyberNull"
-	mail="mailto:aasish@kybernull.dev"
-/>
+	<Footer
+		github="https://github.com/KyberNull"
+		linkedin="https://www.linkedin.com/in/aasish-srivatsa-yenni-2531a7175/"
+		twitter="https://x.com/KyberNull"
+		mail="mailto:aasish@kybernull.dev"
+	/>
+</div>
+
+<style>
+	.app-shell {
+		min-height: 100dvh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.page-content {
+		flex: 1;
+	}
+</style>
