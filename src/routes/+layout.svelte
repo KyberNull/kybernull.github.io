@@ -25,4 +25,5 @@
 	github="https://github.com/KyberNull"
 	linkedin="https://www.linkedin.com/in/aasish-srivatsa-yenni-2531a7175/"
 	twitter="https://x.com/KyberNull"
+	mail="mailto:aasish@kybernull.dev"
 />
