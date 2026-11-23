@@ -2,11 +2,13 @@
 	let {
 		github = '',
 		linkedin = '',
-		twitter = ''
+		twitter = '',
+		mail = ''
 	}: {
 		github?: string;
 		linkedin?: string;
 		twitter?: string;
+		mail?: string;
 	} = $props();
 </script>
 
@@ -26,14 +28,20 @@
 			{/if}
 
 			{#if twitter}
-				<a href={twitter}>
+				<a href={twitter} target="_blank" rel="noopener noreferrer">
 					twitter <span>↗</span>
+				</a>
+			{/if}
+
+			{#if mail}
+				<a href={mail} target="_blank" rel="noopener noreferrer">
+					mail <span>↗</span>
 				</a>
 			{/if}
 		</div>
 
 		<span class="copyright">
-			{new Date().getFullYear()} Aasish
+			© {new Date().getFullYear()} Aasish
 		</span>
 	</div>
 </footer>
@@ -41,7 +49,7 @@
 <style>
 	.site-footer {
 		width: 100%;
-		margin-top: 6rem;
+		margin-top: 2rem;
 		border-top: 1px solid var(--border);
 	}
 

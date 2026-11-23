@@ -1,13 +1,34 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import ThemeToggle from './ThemeToggle.svelte';
+
+	let pathname = $derived(page.url.pathname);
 </script>
 
 <header class="site-header">
 	<nav class="navbar" aria-label="Main navigation">
 		<div class="nav-links">
-			<a href="/" class="nav-link">Home</a>
-			<a href="/projects" class="nav-link">Projects</a>
-			<a href="/notes" class="nav-link">Notes</a>
+			<a
+				href="/"
+				class={['nav-link', pathname === '/' && 'active']}
+				aria-current={pathname === '/' ? 'page' : undefined}
+			>
+				Home
+			</a>
+			<a
+				href="/projects"
+				class={['nav-link', pathname.startsWith('/projects') && 'active']}
+				aria-current={pathname.startsWith('/projects') ? 'page' : undefined}
+			>
+				Projects
+			</a>
+			<a
+				href="/writing"
+				class={['nav-link', pathname.startsWith('/writing') && 'active']}
+				aria-current={pathname.startsWith('/writing') ? 'page' : undefined}
+			>
+				Writing
+			</a>
 			<ThemeToggle />
 		</div>
 	</nav>
@@ -49,6 +70,14 @@
 	.nav-link:hover {
 		color: var(--accent);
 		opacity: 1;
+	}
+
+	.nav-link.active {
+		opacity: 1;
+		text-decoration: underline;
+		text-decoration-color: var(--accent);
+		text-underline-offset: 6px;
+		text-decoration-thickness: 1.5px;
 	}
 
 	@media (max-width: 480px) {
