@@ -49,7 +49,7 @@
 <style>
 	.site-footer {
 		width: 100%;
-		margin-top: 6rem;
+		margin-top: 2rem;
 		border-top: 1px solid var(--border);
 	}
 
