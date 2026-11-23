@@ -152,3 +152,4 @@ Pay particular attention to:
 - Never claim completion solely because code was written.
 - Preserve existing functionality unless a change is explicitly required.
 - Always explicitly report any UI changes made to the user.
+- Prefer reusing existing root CSS variables (colors, typography, spacing) and avoid introducing unnecessary custom styles or one-off values.
