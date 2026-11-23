@@ -151,3 +151,4 @@ Pay particular attention to:
 - Run relevant verification after implementation.
 - Never claim completion solely because code was written.
 - Preserve existing functionality unless a change is explicitly required.
+- Always explicitly report any UI changes made to the user.
